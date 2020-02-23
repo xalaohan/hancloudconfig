@@ -1,0 +1,19 @@
+server:
+  port: 8008
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:
+        http://localhost:10000/eureka/
+#在cloud的D版本开始之后，默认就关闭了熔断器，所以得打开
+feign:
+  hystrix:
+    enabled: true
+
+
+
