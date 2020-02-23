@@ -1,0 +1,19 @@
+server:
+  port: 8000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:
+        http://localhost:10000/eureka/
+
+#规定就这么写
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
